@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-
+from Scraper import dict_of_courses
 
 def main():
     list_of_links = []
@@ -15,7 +15,8 @@ def main():
     Line below clears duplicate of links due the uni's inability to keep an organised website 
     '''
     list_of_links = list(dict.fromkeys(list_of_links))
-
+    dict_of_course = dict_of_courses(list_of_links)
+    print(dict_of_course)
 
 if __name__ == "__main__":
     main()
