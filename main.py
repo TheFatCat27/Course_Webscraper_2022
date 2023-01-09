@@ -2,6 +2,7 @@ import requests
 import json
 from bs4 import BeautifulSoup
 from Scraper import dict_of_courses
+from json_To_Sql import json_to_sqlite
 
 def main():
     list_of_links = []
@@ -22,6 +23,8 @@ def main():
     open("myfile.json", "w").close()
     with open("myfile.json", "w") as f:
         json.dump(dict_of_course, f, indent=6)
+
+    json_to_sqlite("myfile.json")
 
 if __name__ == "__main__":
     main()
